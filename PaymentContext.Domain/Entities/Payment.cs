@@ -4,42 +4,37 @@ namespace PaymentContext.Domain.Entities
 {
     public abstract class Payment
     {
-        public string Number { get; set; }
+        protected Payment(DateTime paidDate, DateTime expireDate, decimal total, decimal totalPaid, string payer, string document, string adress, string email)
+        {
+            Number = Guid.NewGuid().ToString().Replace("-", "").Substring(0, 10).ToUpper();
+            //Gerando Guid, removendo os traços do guid, pegando os 10 primeiros caracteres e transformar em maiúsculo.
+            PaidDate = paidDate;
+            ExpireDate = expireDate;
+            Total = total;
+            TotalPaid = totalPaid;
+            Payer = payer;
+            Document = document;
+            Adress = adress;
+            Email = email;
+        }
+
+        public string Number { get; private set; }
         //Propriedade para gerar um Guid do pagamento, para identificar esse pagamento
-        public DateTime PaidDate { get; set; }
+        public DateTime PaidDate { get; private set; }
         //Data de pagamento
-        public DateTime ExpireDate { get; set; }
+        public DateTime ExpireDate { get; private set; }
         //Data de expiração
-        public decimal Total { get; set; }
+        public decimal Total { get; private set; }
         //Quanto o cliente tem que pagar
-        public decimal TotalPaid { get; set; }
+        public decimal TotalPaid { get; private set; }
         //Quanto foi pago pelo cliente
-        public string Payer { get; set; }
+        public string Payer { get; private set; }
         //proprietário do pagamento (pessoa que vai pagar)
-        public string Document { get; set; }
+        public string Document { get; private set; }
         //documento da pessoa que vai pagar
-        public string Adress { get; set; }
+        public string Adress { get; private set; }
         //Endereço de cobrança, utilizado para emitir nota.
         //O endereço  de cobrança pode ser diferente do endereço de entrega.
-        public string Email { get; set; }
-    }
-    public class BoletoPayment : Payment
-    {
-        public string BarCode { get; set; }
-        //código de barras
-        public string BoletoNumber { get; set; }
-        //numero do boleto, normalmente gerado no banco de dados
-    }
-    public class CreditCardPayment : Payment
-    {
-        //não armazenar ccv do cartão e data de expiração. (Se um dia vazar esses dados do banco da sua empresa, pode ser processada)
-        public string CardHolderName { get; set; }
-        public string CardNumber { get; set; }
-        public string LastTransactionNumber { get; set; }
-    }
-    public class PayPalPayment : Payment
-    {
-        public string TransactionCode { get; set; }
-        //codígo de transação que o paypal gera
+        public string Email { get; private set; }
     }
 }

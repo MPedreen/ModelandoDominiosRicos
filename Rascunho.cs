@@ -63,4 +63,9 @@ Exemplo de uma conversa com um cliente aleatório:
 "Meu site funciona da seguinte forma, meu cliente acessa o site, coloca os produtos no carrinho, realiza o pedido e eu faço a entrega para ele."
 
 Modelo de pagamentos da plataforma balta.io: "Tem o aluno, esse aluno pode realizar uma assinatura e essa assinatura pode ser feita através do Paypal, cartão de crédito ou boleto". Podemos retirar desse modelo: Entidade Student (aluno), Subscription (Assinatura) e Payment(Forma de pagamento)
+
+Livros recomendados pelo balta:
+// Clean Code - Robert C. Martin (Uncle Bob)
+// Clean Coder - Robert C. Martin (Uncle Bob)
+// Clean Architecture - Robert C. Martin (Uncle Bob)
 */

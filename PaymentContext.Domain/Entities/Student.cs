@@ -28,9 +28,7 @@ namespace PaymentContext.Domain.Entities
         {
             //Regra de negócio: Cancela todas as outras assinaturas e coloca esta como principal.
             foreach (var sub in Subscriptions)
-            {
-                sub.Active = false;
-            }
+                sub.Inactivate();
 
             _subscriptions.Add(subscription);
         }

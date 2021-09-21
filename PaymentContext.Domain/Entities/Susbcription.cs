@@ -5,6 +5,16 @@ namespace PaymentContext.Domain.Entities
 {
     public class Subscription
     {
+        private IList<Payment> _payments;
+        public Subscription(DateTime? expireDate)
+        {
+            CreateDate = DateTime.Now;
+            LastUpdateDate = DateTime.Now;
+            ExpireDate = expireDate;
+            Active = true;
+            _payments = new List<Payment>();
+        }
+
         public DateTime CreateDate { get; set; }
         //Data do início
         public DateTime LastUpdateDate { get; set; }
@@ -13,7 +23,22 @@ namespace PaymentContext.Domain.Entities
         //Data de expiração
         public bool Active { get; set; }
         //O aluno só pode ter uma assinatura ativa
-        public List<Payment> Payments { get; set; }
+        public IReadOnlyCollection<Payment> Payments { get; private set; }
         //Lista de pagamentos
+
+        public void AddPayment(Payment payment)
+        {
+            _payments.Add(payment);
+        }
+        public void Activate()
+        {
+            Active = true;
+            LastUpdateDate = DateTime.Now;
+        }
+        public void Inactivate()
+        {
+            Active = false;
+            LastUpdateDate = DateTime.Now;
+        }
     }
 }
