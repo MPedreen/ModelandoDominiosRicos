@@ -1,20 +1,21 @@
 using System;
+using PaymentContext.Domain.ValueObjects;
 
 namespace PaymentContext.Domain.Entities
 {
     public abstract class Payment
     {
-        protected Payment(DateTime paidDate, DateTime expireDate, decimal total, decimal totalPaid, string payer, string document, string adress, string email)
+        protected Payment(DateTime paidDate, DateTime expireDate, decimal total, decimal totalPaid, string payer, Document document, Address address, Email email)
         {
             Number = Guid.NewGuid().ToString().Replace("-", "").Substring(0, 10).ToUpper();
-            //Gerando Guid, removendo os traços do guid, pegando os 10 primeiros caracteres e transformar em maiúsculo.
+            //Gerando Guid, removendo os traços do guid, pegando os 10 primeiros caracteres e transformando em maiúsculo.
             PaidDate = paidDate;
             ExpireDate = expireDate;
             Total = total;
             TotalPaid = totalPaid;
             Payer = payer;
             Document = document;
-            Adress = adress;
+            Address = address;
             Email = email;
         }
 
@@ -30,11 +31,11 @@ namespace PaymentContext.Domain.Entities
         //Quanto foi pago pelo cliente
         public string Payer { get; private set; }
         //proprietário do pagamento (pessoa que vai pagar)
-        public string Document { get; private set; }
+        public Document Document { get; private set; }
         //documento da pessoa que vai pagar
-        public string Adress { get; private set; }
+        public Address Address { get; private set; }
         //Endereço de cobrança, utilizado para emitir nota.
         //O endereço  de cobrança pode ser diferente do endereço de entrega.
-        public string Email { get; private set; }
+        public Email Email { get; private set; }
     }
 }

@@ -9,9 +9,7 @@ namespace PaymentContext.Tests
         [TestMethod]
         public void AdicionarAssinatura()
         {
-            var subscription = new Subscription(null);
-            var student = new Student("Pedro", "Ferreira", "123456789", "pedro@gmail.com");
-            student.AddSubscription(subscription);
+
         }
     }
 }

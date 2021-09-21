@@ -1,4 +1,5 @@
 using System;
+using PaymentContext.Domain.ValueObjects;
 
 namespace PaymentContext.Domain.Entities
 {
@@ -12,16 +13,16 @@ namespace PaymentContext.Domain.Entities
             decimal total,
             decimal totalPaid,
             string payer,
-            string document,
-            string adress,
-            string email) : base(
+            Document document,
+            Address address,
+            Email email) : base(
                 paidDate,
                 expireDate,
                 total,
                 totalPaid,
                 payer,
                 document,
-                adress,
+                address,
                 email)
         {
             BarCode = barCode;
