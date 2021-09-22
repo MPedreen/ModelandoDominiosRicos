@@ -71,4 +71,6 @@ Livros recomendados pelo balta:
 
 adicionar pacote de notificações "flunt" balta (esse pacote contém método AddNotifications): 
 dotnet add package flunt
+
+SPOF - Single Point of Failure
 */
