@@ -68,4 +68,7 @@ Livros recomendados pelo balta:
 // Clean Code - Robert C. Martin (Uncle Bob)
 // Clean Coder - Robert C. Martin (Uncle Bob)
 // Clean Architecture - Robert C. Martin (Uncle Bob)
+
+adicionar pacote de notificações "flunt" balta (esse pacote contém método AddNotifications): 
+dotnet add package flunt
 */
