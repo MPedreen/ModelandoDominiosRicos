@@ -17,6 +17,7 @@ namespace PaymentContext.Tests
         private readonly Subscription _subscription;
 
         public StudentTests()
+        //metodo construtor
         {
             _name = new Name("Bruce", "Wayne");
             _document = new Document("15796479647", EDocumentType.CPF);

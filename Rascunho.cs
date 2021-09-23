@@ -73,4 +73,9 @@ adicionar pacote de notificações "flunt" balta (esse pacote contém método Ad
 dotnet add package flunt
 
 SPOF - Single Point of Failure
+
+CQRS - Command Query Responsability Segregation (Segregação por comandos e queries)
+Command = input/escrita e Query = leitura
+Dividir a escrita de leitura
+
 */
