@@ -78,4 +78,5 @@ CQRS - Command Query Responsability Segregation (Segregação por comandos e que
 Command = input/escrita e Query = leitura
 Dividir a escrita de leitura
 
+Fail Fast Validation = colocar as validações no command. Recebe um command, o commando é valido ? sim, prossegue com o domínio, se não, já volta pra tela e nem dá sequencia a requisição
 */
