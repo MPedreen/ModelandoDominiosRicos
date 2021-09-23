@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Flunt.Validations;
 using PaymentContext.Shared.Entities;
 
@@ -25,7 +26,7 @@ namespace PaymentContext.Domain.Entities
         //Data de expiração
         public bool Active { get; set; }
         //O aluno só pode ter uma assinatura ativa
-        public IReadOnlyCollection<Payment> Payments { get; private set; }
+        public IReadOnlyCollection<Payment> Payments { get { return _payments.ToArray(); } }
         //Lista de pagamentos
 
         public void AddPayment(Payment payment)
