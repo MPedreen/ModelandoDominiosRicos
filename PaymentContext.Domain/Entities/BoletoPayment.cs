@@ -5,9 +5,9 @@ namespace PaymentContext.Domain.Entities
 {
     public class BoletoPayment : Payment
     {
-        public BoletoPayment(string barCode,
+        public BoletoPayment(
+            string barCode,
             string boletoNumber,
-            string transactionCode,
             DateTime paidDate,
             DateTime expireDate,
             decimal total,

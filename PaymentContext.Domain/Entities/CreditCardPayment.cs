@@ -9,7 +9,6 @@ namespace PaymentContext.Domain.Entities
             string cardHolderName,
             string cardNumber,
             string lastTransactionNumber,
-            string transactionCode,
             DateTime paidDate,
             DateTime expireDate,
             decimal total,
