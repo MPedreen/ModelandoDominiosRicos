@@ -15,7 +15,7 @@ namespace PaymentContext.Domain.Commands
 
         //o Type não precisa estar aqui pq vai ser sempre pessoa fisica que vai ter uma assinatura
         public string Email { get; set; }
-        public string BarCode { get; private set; }
+        public string BarCode { get; set; }
         //código de barras
         public string BoletoNumber { get; set; }
         //numero do boleto
